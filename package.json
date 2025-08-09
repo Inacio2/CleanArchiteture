@@ -1,0 +1,19 @@
+{
+  "name": "cleanarchiteture",
+  "version": "1.0.0",
+  "description": "estudos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "i": "^0.3.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
