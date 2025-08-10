@@ -2,6 +2,7 @@
   "name": "cleanarchiteture",
   "version": "1.0.0",
   "description": "estudos",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,4 +17,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
+
+  
 }
