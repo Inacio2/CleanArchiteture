@@ -25,6 +25,10 @@ export class ListProductUsecase
         public async execute(): Promise<ListProductOutputDto> {
 
             const aProduct = await this.productGateway.list()
+
+            const output = this.presentOutput(aProduct);
+
+            return output;
             
         }
 
@@ -33,6 +37,7 @@ export class ListProductUsecase
                 product
                  : products.map((p) =>{
                     return{
+
                         id : p.id,
                         name : p.name,
                         price : p.price,
