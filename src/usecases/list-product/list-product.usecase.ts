@@ -1,4 +1,4 @@
-import { product } from "../../domain/product/entity/product";
+import { Product } from "../../domain/product/entity/product";
 import { ProductGateway } from "../../domain/product/gateway/gateway.product";
 import { Usecase } from "../usecases";
 
@@ -32,7 +32,7 @@ export class ListProductUsecase
             
         }
 
-        private presentOutput(products: product[]) : ListProductOutputDto{
+        private presentOutput(products: Product[]) : ListProductOutputDto{
             return{
                 product
                  : products.map((p) =>{

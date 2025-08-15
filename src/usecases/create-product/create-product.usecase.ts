@@ -1,4 +1,4 @@
-import { product } from "../../domain/product/entity/product";
+import { Product } from "../../domain/product/entity/product";
 import { ProductGateway } from "../../domain/product/gateway/gateway.product";
 import { Usecase } from "../usecases"
 
@@ -25,7 +25,7 @@ export class CreateProductUsecase
             name, 
             price
         } : CreateProductInputDto): Promise<CreateProductOutputDto> {
-            const aProduct = product.create(name,price)
+            const aProduct = Product.create(name,price)
 
             await this.productGateway.save(aProduct)
 

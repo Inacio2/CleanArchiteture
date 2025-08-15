@@ -1,7 +1,7 @@
-import { product } from "../entity/product";
+import { Product } from "../entity/product";
 
 export interface ProductGateway {
-    save(Product : product) : Promise<void>;
-    list(): Promise<product[]>;
+    save(Product : Product) : Promise<void>;
+    list(): Promise<Product[]>;
     
 }

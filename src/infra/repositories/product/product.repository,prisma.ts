@@ -1,5 +1,6 @@
-import { PrismaClient } from "../../../../node_modules/.prisma/client/default";
-import { product, product, product } from "../../../domain/product/entity/product";
+
+import { PrismaClient } from '@prisma/client'
+import { Product} from "../../../domain/product/entity/product";
 import { ProductGateway } from "../../../domain/product/gateway/gateway.product";
 
 export class ProductRepositoryPrismas implements ProductGateway{
@@ -12,28 +13,35 @@ export class ProductRepositoryPrismas implements ProductGateway{
         return new ProductRepositoryPrismas(prismaClient);
     }
 
-    public async save(Product: product): Promise<void> {
+    public async save(product: Product): Promise<void> {
         const data = {
-            id : Product.id,
-            name : Product.name,
-            price : Product.price,
-            quantity : Product.quantity
+            id : product.id,
+            name : product.name,
+            price : product.price,
+            quantity : product.quantity
         }
-
+ 
         await this.prismaClient.product.create({
             data,
         })
     }
-    public async list(): Promise<product[]> {
+    public async list(): Promise<Product[]> {
 
-        const products = await this.prismaClient.product.findMany();
+        const products = await this.prismaClient.product.findMany()
 
-        const productList = products.map((p) =>{
+        const productList = products.map((p)=>{
             const product = Product.with({
                 id : p.id,
-                name : p.
+                name : p.name,
+                price : p.price,
+                quantity : p.quantity
             })
+
+            return product;
+           
         })
+
+        return productList;
     }
     
 }
